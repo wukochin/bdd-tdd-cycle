@@ -41,6 +41,21 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   And I should not see "2001: A Space Odyssey"
   And I should not see "The Help"
 
+Scenario: restrict to movies with 'G' ratings
+  Given I check the following ratings: G
+  And I uncheck the following ratings: PG-13,R,PG,NC-17
+  And I press "Refresh"
+  Then I should see "Aladdin"
+  And I should see "2001: A Space Odyssey"
+  And I should see "Chicken Run "
+  And I should not see "The Incredibles"
+  And I should not see "Amelie"
+  And I should not see "Raiders of the Lost Ark"
+  And I should not see "When Harry Met Sally"
+  And I should not see "Chocolat"
+  And I should not see "The Terminator"
+  And I should not see "The Help"
+
 Scenario: all ratings selected
   # see assignment
   Given I check the following ratings: PG-13,G,NC-17,PG,R
