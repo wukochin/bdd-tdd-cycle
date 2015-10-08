@@ -18,7 +18,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'test-unit'
-  gem 'rails_12factor'
 end
 group :production do
   gem 'pg'
